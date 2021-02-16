@@ -1,5 +1,7 @@
 package fr.epsi.entite;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +17,8 @@ public class Idea {
 	private String title;
 	private String type;
 	private String description;
-	private String image;
+	private String picture;
+	private Date date;
 	
 	private User user;
 	
@@ -37,17 +40,23 @@ public class Idea {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getImage() {
-		return image;
+	public String getpicture() {
+		return picture;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setpicture(String picture) {
+		this.picture = picture;
 	}
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }
