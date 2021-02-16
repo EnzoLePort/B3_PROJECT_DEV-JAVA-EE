@@ -11,10 +11,6 @@
 <body>
 	<%@include file="common/menu.jsp"%>
 
-
-
-	<h1>Ca Fonctionne dude !</h1>
-
 	<div class="row">
 		<form class="col s12">
 
@@ -43,7 +39,7 @@
 
 	<div align="center">
 		<p> Pas encore de compte ? </p>
-		<a href ="/subscribe">S'inscrire</a>
+		<a href="subscribe">S'inscrire</a>
 	</div>
 
 	<%@include file="common/footer.jsp"%>

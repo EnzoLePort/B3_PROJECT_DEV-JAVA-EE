@@ -10,5 +10,23 @@
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
+	
+  	<servlet>
+		<servlet-name>Subscribe</servlet-name>
+		<servlet-class>fr.epsi.servlet.SubscribeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Subscribe</servlet-name>
+		<url-pattern>/subscribe</url-pattern>
+	</servlet-mapping>
+	
+  	<servlet>
+		<servlet-name>Idea</servlet-name>
+		<servlet-class>fr.epsi.servlet.IdeaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Idea</servlet-name>
+		<url-pattern>/idea</url-pattern>
+	</servlet-mapping>
   
 </web-app>

@@ -10,8 +10,8 @@
 <nav>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="articles">Connexion</a></li>
-        <li><a href="factures">Section Idees</a></li>
+        <li><a href="home">Connexion</a></li>
+        <li><a href="idea">Section Idees</a></li>
       </ul>
     </div>
   </nav>
