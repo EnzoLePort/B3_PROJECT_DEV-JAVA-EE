@@ -9,7 +9,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 		<jta-data-source>java:/TopaidiDS</jta-data-source>
 		
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>

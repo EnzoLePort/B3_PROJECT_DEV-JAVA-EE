@@ -28,5 +28,14 @@
 		<servlet-name>Idea</servlet-name>
 		<url-pattern>/idea</url-pattern>
 	</servlet-mapping>
+	
+  	<servlet>
+		<servlet-name>CreateIdea</servlet-name>
+		<servlet-class>fr.epsi.servlet.CreateIdeaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateIdea</servlet-name>
+		<url-pattern>/create-idea</url-pattern>
+	</servlet-mapping>
   
 </web-app>

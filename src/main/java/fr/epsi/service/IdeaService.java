@@ -10,4 +10,6 @@ public interface IdeaService {
 
 	public List<Idea> getIdeas();
 	
+	void add(Idea idea); 
+	
 }

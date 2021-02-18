@@ -11,34 +11,19 @@
 <body>
 	<%@include file="common/menu.jsp"%>
 	
-	<% String email = (String) session.getAttribute("email");  %>
-	<c:out value="${ email }"></c:out>
-
-	<div class="row">
-		<form class="col s12" method="POST" action="#">
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="email" type="email" class="validate"> <label
-						for="email">Email</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="password" type="password" class="validate"> <label
-						for="email">password</label>
-				</div>
-			</div>
-
-
-		  <button class="btn waves-effect waves-light" type="submit" name="action">
-		    <i class="material-icons right">Connexion</i>
-		  </button>
-
-		
-		</form>
-	</div>
+	<p style="color:red"> <c:out value="${ error }"></c:out> </p>
+	
+	<form method="POST" action="#">
+	  <div class="mb-3">
+	    <label class="form-label">Email</label>
+	    <input type="email" name="email" class="form-control">
+	  </div>
+	  <div class="mb-3">
+	    <label class="form-label">Mot de passe</label>
+	    <input type="password" name="password" class="form-control">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Connexion</button>
+	</form>
 
 	<div align="center">
 		<p> Pas encore de compte ? </p>
