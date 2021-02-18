@@ -9,10 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SubscribeServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException
-        {
-			this.getServletContext().getRequestDispatcher("/WEB-INF/page/subscribe.jsp").forward(req, resp);
-        }
+	@Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/page/subscribe.jsp").forward(req, resp);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	// TODO Auto-generated method stub
+    	super.doPost(req, resp);
+    }
 	
 }

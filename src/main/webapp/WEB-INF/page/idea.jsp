@@ -9,6 +9,9 @@
 </head>
 <body>
 
+	<% String email = (String) session.getAttribute("email");  %>
+	<c:out value="${ email }"></c:out>
+
 	<c:forEach items="${ listIdeas }" var="idea">
 		-> <c:out value="${ idea.title }"></c:out>
 	</c:forEach>

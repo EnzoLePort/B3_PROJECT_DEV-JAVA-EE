@@ -10,9 +10,12 @@
 </head>
 <body>
 	<%@include file="common/menu.jsp"%>
+	
+	<% String email = (String) session.getAttribute("email");  %>
+	<c:out value="${ email }"></c:out>
 
 	<div class="row">
-		<form class="col s12">
+		<form class="col s12" method="POST" action="#">
 
 			<div class="row">
 				<div class="input-field col s12">

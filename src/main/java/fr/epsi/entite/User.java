@@ -16,6 +16,7 @@ public class User {
 	private String name;
 	private String mail;
 	private String password;
+	private int rank; 	// -1 candidature ; 0 utilisateur simple ; 1 admin
 	
 	public String getFirstName() {
 		return firstName;
@@ -40,6 +41,13 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	public int getRank() {
+		return rank;
 	}
 
 }
