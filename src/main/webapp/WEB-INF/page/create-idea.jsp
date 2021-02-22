@@ -12,6 +12,8 @@
 	<%@include file="common/menu.jsp"%>
 	
 	<h2>Publication d'une idée</h2>
+	<p style="color:green"> <c:out value="${sucess}"></c:out> </p>
+	
 	
 	<form method="POST" action="#">
 	  <div class="mb-3">
