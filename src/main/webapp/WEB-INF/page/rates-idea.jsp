@@ -11,7 +11,7 @@
 <body>
 	<%@include file="common/menu.jsp"%>
 
-	<h2>Liste des rating pour l'idée : {{idee}} !</h2>
+	<h2>Liste des commentaires pour l'idée : {{idee}} !</h2>
 	
 	<table class="table table-striped">
 	  <th>Nom</th>

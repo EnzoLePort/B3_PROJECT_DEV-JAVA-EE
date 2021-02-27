@@ -8,5 +8,7 @@ import fr.epsi.entite.RateIdea;
 public interface RateIdeaDAO {
 
 	List<RateIdea> getRateIdea(Idea idea);
+	
+	void add(RateIdea rateIdea);
 
 }

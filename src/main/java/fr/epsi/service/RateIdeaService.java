@@ -7,6 +7,5 @@ public interface RateIdeaService {
 	void add(RateIdea rateIdea);
 
 	List<RateIdea> getRateIdea(Idea idea);
-
 	
 }

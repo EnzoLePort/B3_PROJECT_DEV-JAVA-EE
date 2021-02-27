@@ -28,7 +28,7 @@ public class RateIdeaServiceImpl implements RateIdeaService {
 
 	public void add(RateIdea rateIdea) {
 		RateIdeaDAO dao = new RateIdeaDAOImpl(em, utx);
-		// dao.add(rateIdea);
+		dao.add(rateIdea);
 	}
 	
 	

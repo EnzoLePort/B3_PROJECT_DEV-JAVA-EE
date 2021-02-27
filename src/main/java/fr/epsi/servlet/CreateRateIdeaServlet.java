@@ -2,6 +2,7 @@ package fr.epsi.servlet;
 
 import java.io.IOException;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +13,12 @@ import fr.epsi.entite.Idea;
 import fr.epsi.entite.Rate;
 import fr.epsi.entite.RateIdea;
 import fr.epsi.entite.User;
+import fr.epsi.service.RateIdeaService;
 
 public class CreateRateIdeaServlet extends HttpServlet {
+	
+	@EJB
+	private RateIdeaService service;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,8 +47,10 @@ public class CreateRateIdeaServlet extends HttpServlet {
     	// Création objet Rate
 		Rate rate = new Rate();
 		if(note == 1) {
+			rate.setId(Long.parseLong("2"));
 			rate.setName("Top");
 		} else {
+			rate.setId(Long.parseLong("1"));
 			rate.setName("Flop");
 		}
 		
@@ -53,7 +60,9 @@ public class CreateRateIdeaServlet extends HttpServlet {
 		rateIdea.setIdea(idea);
 		rateIdea.setRate(rate);
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/page/create-rateIdea.jsp").forward(req, resp);
+		service.add(rateIdea);
+		
+		resp.sendRedirect("rates-idea?id="+idIdea);
 	}
 	
 }
