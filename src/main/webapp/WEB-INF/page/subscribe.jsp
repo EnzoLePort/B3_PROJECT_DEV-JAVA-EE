@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Inscription</title>
 <%@include file="common/header.jsp"%>
 </head>
 <body>
 	<%@include file="common/menu.jsp"%>
 	
 	<div class="row">
-		<form class="col s12">
+		<form class="col-12">
 		
 			<div class="row">
 				<div class="input-field col s12">

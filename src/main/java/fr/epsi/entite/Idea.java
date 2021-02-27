@@ -26,7 +26,6 @@ public class Idea {
 	@JoinColumn(name = "id_user")
 	private User user;
 	
-	
 	public Long getId() {
 		return id;
 	}

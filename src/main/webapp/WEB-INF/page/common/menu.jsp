@@ -25,7 +25,7 @@
       	<c:if test="${user.mail == null}">
 		    <a class="nav-link" href="home">Connexion</a>
 		</c:if>
-		<a class="nav-link" href="idea">Section Idees</a>
+		<a class="nav-link" href="list-ideas">Section Idees</a>
       </div>
     </div>
   </div>

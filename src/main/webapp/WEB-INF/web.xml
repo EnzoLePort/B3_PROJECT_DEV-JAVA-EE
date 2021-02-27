@@ -21,12 +21,12 @@
 	</servlet-mapping>
 	
   	<servlet>
-		<servlet-name>Idea</servlet-name>
-		<servlet-class>fr.epsi.servlet.IdeaServlet</servlet-class>
+		<servlet-name>ListIdeas</servlet-name>
+		<servlet-class>fr.epsi.servlet.ListIdeasServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Idea</servlet-name>
-		<url-pattern>/idea</url-pattern>
+		<servlet-name>ListIdeas</servlet-name>
+		<url-pattern>/list-ideas</url-pattern>
 	</servlet-mapping>
 	
   	<servlet>
@@ -38,6 +38,7 @@
 		<url-pattern>/create-idea</url-pattern>
 	</servlet-mapping>
 	
+
   	<servlet>
 		<servlet-name>RateIdeaServlet</servlet-name>
 		<servlet-class>fr.epsi.servlet.RateIdeaServlet</servlet-class>
@@ -45,6 +46,15 @@
 	<servlet-mapping>
 		<servlet-name>RateIdeaServlet</servlet-name>
 		<url-pattern>/rates-idea</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateRateIdea</servlet-name>
+		<servlet-class>fr.epsi.servlet.CreateRateIdeaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateRateIdea</servlet-name>
+		<url-pattern>/create-rateIdea</url-pattern>
 	</servlet-mapping>
   
 </web-app>

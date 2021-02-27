@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Authentification</title>
 <%@include file="common/header.jsp"%>
 </head>
 <body>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.epsi.service.IdeaService;
 
-public class IdeaServlet extends HttpServlet {
+public class ListIdeasServlet extends HttpServlet {
 	
 	@EJB
 	private IdeaService service;
@@ -18,7 +18,7 @@ public class IdeaServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("listIdeas", service.getIdeas());
-		this.getServletContext().getRequestDispatcher("/WEB-INF/page/idea.jsp").forward(req, resp);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/page/list-ideas.jsp").forward(req, resp);
 	}
 
 }

@@ -40,7 +40,7 @@ public class HomeServlet extends HttpServlet {
     	if(user != null) {
         	HttpSession session = req.getSession();
         	session.setAttribute("user", user);
-        	resp.sendRedirect("idea");
+        	resp.sendRedirect("list-ideas");
     	} else {
 	    	req.setAttribute("error", "Les identifiants ne sont pas valides !");
 	    	this.getServletContext().getRequestDispatcher("/WEB-INF/page/home.jsp").forward(req, resp);

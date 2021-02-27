@@ -30,7 +30,6 @@ public class CreateIdeaServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO 
 		String title = req.getParameter("title");
     	String description = req.getParameter("description");
 		String type = req.getParameter("type");

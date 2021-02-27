@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Liste des idées</title>
 <%@include file="common/header.jsp"%>
 </head>
 <body>
@@ -21,6 +21,7 @@
 	  <th>Date</th>
 	  <th>Catégorie</th>
 	  <th>Note</th>
+	  <th>Voir les commentaires</th>
 	  	<c:forEach items="${ listIdeas }" var="idea">
 			<tr>
 				<td><c:out value="${ idea.title }"></c:out></td>
@@ -29,9 +30,10 @@
 				<td><c:out value="${ idea.date }"></c:out></td>
 				<td><c:out value="${ idea.type }"></c:out></td>
 				<td>
-					<button class="btn btn-success"><i class="fas fa-thumbs-up"></i></button>
-					<button class="btn btn-danger"><i class="fas fa-thumbs-down"></i></button>
+					<a href="create-rateIdea?id=${ idea.id }&note=1"><button class="btn btn-success"><i class="fas fa-thumbs-up"></i></button></a>
+					<a href="create-rateIdea?id=${ idea.id }&note=0"><button class="btn btn-danger"><i class="fas fa-thumbs-down"></i></button></a>
 				</td>
+				<td><a href="rates-idea?id=${ idea.id }"><i class="fas fa-eye"></i></a></td>
 			</tr>
 		</c:forEach>
 	</table>
