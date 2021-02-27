@@ -11,8 +11,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.epsi.entite.Idea;
+import fr.epsi.entite.User;
 import fr.epsi.service.IdeaService;
 import fr.epsi.service.UserService;
 
@@ -33,14 +35,18 @@ public class CreateIdeaServlet extends HttpServlet {
     	String description = req.getParameter("description");
 		String type = req.getParameter("type");
     	String picture = req.getParameter("picture");
+    	HttpSession session = req.getSession();
+    	User user = (User) session.getAttribute("user");
 
     	Date today = new Date();
     	
     	Idea idea = new Idea();
     	idea.settitle(title);
     	idea.setDescription(description);
+    	idea.setpicture(picture);
     	idea.settype(type);
     	idea.setDate(today);
+    	idea.setUser(user);
     	
     	service.add(idea);
     	req.setAttribute("sucess", "l'idee a bien été publiée");

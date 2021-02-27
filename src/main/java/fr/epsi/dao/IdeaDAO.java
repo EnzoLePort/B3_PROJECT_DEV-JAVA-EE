@@ -8,6 +8,6 @@ public interface IdeaDAO {
 
 	List<Idea> getIdeas();
 	
-	void add(Idea idea); 
+	void add(Idea idea);
 	
 }

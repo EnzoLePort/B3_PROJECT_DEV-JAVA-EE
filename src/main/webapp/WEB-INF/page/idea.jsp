@@ -16,6 +16,7 @@
 	
 	<table class="table table-striped">
 	  <th>Nom</th>
+	  <th>Par</th>
 	  <th>Description</th>
 	  <th>Date</th>
 	  <th>Catégorie</th>
@@ -23,6 +24,7 @@
 	  	<c:forEach items="${ listIdeas }" var="idea">
 			<tr>
 				<td><c:out value="${ idea.title }"></c:out></td>
+				<td><c:out value="${ idea.user.mail }"></c:out></td>
 				<td><c:out value="${ idea.description }"></c:out></td>
 				<td><c:out value="${ idea.date }"></c:out></td>
 				<td><c:out value="${ idea.type }"></c:out></td>
