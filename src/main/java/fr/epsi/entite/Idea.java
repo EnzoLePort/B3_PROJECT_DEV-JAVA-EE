@@ -26,6 +26,14 @@ public class Idea {
 	@JoinColumn(name = "id_user")
 	private User user;
 	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	public String gettitle() {
 		return title;
 	}

@@ -37,5 +37,14 @@
 		<servlet-name>CreateIdea</servlet-name>
 		<url-pattern>/create-idea</url-pattern>
 	</servlet-mapping>
+	
+  	<servlet>
+		<servlet-name>RateIdeaServlet</servlet-name>
+		<servlet-class>fr.epsi.servlet.RateIdeaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RateIdeaServlet</servlet-name>
+		<url-pattern>/rates-idea</url-pattern>
+	</servlet-mapping>
   
 </web-app>

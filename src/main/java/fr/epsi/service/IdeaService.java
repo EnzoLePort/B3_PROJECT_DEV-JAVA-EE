@@ -8,7 +8,7 @@ import fr.epsi.entite.Idea;
 
 public interface IdeaService {
 
-	public List<Idea> getIdeas();
+	List<Idea> getIdeas();
 	
 	void add(Idea idea); 
 	
