@@ -37,13 +37,15 @@
 			</tr>
 		</c:forEach>
 	</table>
-
-
-	  
 	
-	  <a href="create-idea"> 
-		  <button class="btn btn-success"><i class="fas fa-plus-circle"></i> Publier une idée !</button>
-	  </a>
+	
+	<div align="center">
+		<a href="leaderboard"><button class="btn btn-primary">Découvrir tous les classements !</button></a>
+		<br /><br/>
+		<a href="create-idea"> 
+		 <button class="btn btn-success"><i class="fas fa-plus-circle"></i> Publier une idée !</button>
+		</a>
+	 </div>
 	
 	<%@include file="common/footer.jsp"%>
 
