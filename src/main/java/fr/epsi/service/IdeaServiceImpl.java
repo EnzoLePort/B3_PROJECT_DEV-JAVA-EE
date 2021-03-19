@@ -42,4 +42,10 @@ public class IdeaServiceImpl implements IdeaService {
 		return dao.getTopRatingIdeas();
 	}
 
+
+	public List<Idea> getBestRatingIdeas() {
+		IdeaDAO dao = new IdeaDAOImpl(em, utx);
+		return dao.getBestRatingIdeas();
+	}
+
 }

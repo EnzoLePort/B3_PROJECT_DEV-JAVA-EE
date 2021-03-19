@@ -62,17 +62,23 @@ public class IdeaDAOImpl implements IdeaDAO {
 		List<Idea> topRatingIdea = new ArrayList<Idea>();
 		Rate rate = new Rate();
 		rate.setId(Long.parseLong("2"));
-//		List<Idea> listIdeasInRateIdea = em.createQuery("SELECT r.idea FROM RateIdea r GROUP BY r.idea", Idea.class).getResultList();
-//	    for (Idea ideaInRateIdea : listIdeasInRateIdea) {
-//			Long nbTop = (Long) em.createQuery("SELECT COUNT(id) as nbNote,r.idea FROM RateIdea r WHERE r.rate=:rate GROUP BY r.idea ORDER BY nbNote asc")
-//								.setParameter("rate", rate)
-//								.getSingleResult();
-//	    }
-//		em.createQuery("SELECT COUNT(id) as nbNote,r.idea FROM RateIdea r WHERE r.rate=:rate GROUP BY r.idea ORDER BY nbNote asc", Idea.class)
-//								.setParameter("rate", rate)
-//								.getResultList();
 		List<Object[]> objects = em.createQuery("SELECT COUNT(r.id) as nbTop, r.idea FROM RateIdea r WHERE r.rate = :rate GROUP BY r.idea ORDER BY nbTop desc")
 							.setParameter("rate", rate)
+							.getResultList();
+		int i = 1;
+		for (Object[] object : objects) {
+			if(i < 4) {
+				Idea idea = (Idea) object[1];
+				topRatingIdea.add(idea);
+			}
+			i++;
+		}
+		return topRatingIdea;
+	}
+
+	public List<Idea> getBestRatingIdeas() {
+		List<Idea> topRatingIdea = new ArrayList<Idea>();
+		List<Object[]> objects = em.createQuery("SELECT COUNT(r.id) as nbRate, r.idea FROM RateIdea r GROUP BY r.idea ORDER BY nbRate desc")
 							.getResultList();
 		int i = 1;
 		for (Object[] object : objects) {

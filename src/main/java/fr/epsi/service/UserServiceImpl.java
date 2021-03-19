@@ -44,4 +44,9 @@ public class UserServiceImpl implements UserService {
 		dao.approveSubscribe(id);
 	}
 
+	public List<User> getBestRatingUsers() {
+		UserDAO dao = new UserDAOImpl(em, utx);
+		return dao.getBestRatingUsers();
+	}
+
 }

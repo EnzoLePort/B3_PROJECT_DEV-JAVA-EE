@@ -1,5 +1,6 @@
 package fr.epsi.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,7 @@ import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
+import fr.epsi.entite.Idea;
 import fr.epsi.entite.User;
 
 public class UserDAOImpl implements UserDAO {
@@ -87,6 +89,22 @@ public class UserDAOImpl implements UserDAO {
 		} catch (HeuristicRollbackException e) {
 			e.printStackTrace();
 		}
+	}
+
+
+	public List<User> getBestRatingUsers() {
+		List<User> bestRatingUsers = new ArrayList<User>();
+		List<Object[]> objects = em.createQuery("SELECT COUNT(r.id) as nbIdea, r.user FROM RateIdea r GROUP BY r.idea ORDER BY nbIdea desc")
+							.getResultList();
+		int i = 1;
+		for (Object[] object : objects) {
+			if(i < 4) {
+				User user = (User) object[1];
+				bestRatingUsers.add(user);
+			}
+			i++;
+		}
+		return bestRatingUsers;
 	}
 
 }

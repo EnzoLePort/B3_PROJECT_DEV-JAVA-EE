@@ -12,6 +12,8 @@ public interface IdeaService {
 	
 	List<Idea> getTopRatingIdeas();
 	
+	List<Idea> getBestRatingIdeas();
+	
 	void add(Idea idea); 
 	
 }

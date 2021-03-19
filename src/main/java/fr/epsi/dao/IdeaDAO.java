@@ -10,6 +10,8 @@ public interface IdeaDAO {
 	
 	List<Idea> getTopRatingIdeas();
 	
+	List<Idea> getBestRatingIdeas();
+	
 	void add(Idea idea);
 	
 }

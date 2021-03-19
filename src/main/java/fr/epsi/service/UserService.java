@@ -13,5 +13,7 @@ public interface UserService {
 	List<User> getSubscribeWaiting();
 	
 	void approveSubscribe(Long id);
+	
+	List<User> getBestRatingUsers();
 
 }
