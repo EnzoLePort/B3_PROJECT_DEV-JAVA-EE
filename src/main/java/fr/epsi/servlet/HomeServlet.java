@@ -29,6 +29,10 @@ public class HomeServlet extends HttpServlet {
 		// Vérification de la présence des données flop et top dans la table rate. Sinon remplissage de ces données
 		serviceRate.checkDataTopFlop();
 		
+		// Deconnexion si l'utilisateur est connecté
+    	HttpSession session = req.getSession();
+    	session.removeAttribute("user");
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/page/home.jsp").forward(req, resp);
     }
     
@@ -37,7 +41,7 @@ public class HomeServlet extends HttpServlet {
     	String email = req.getParameter("email");
     	String password = req.getParameter("password");
     	User user = serviceUser.get(email, password);
-    	if(user != null) {
+    	if(user != null && user.getRank() >=0) {
         	HttpSession session = req.getSession();
         	session.setAttribute("user", user);
         	resp.sendRedirect("list-ideas");

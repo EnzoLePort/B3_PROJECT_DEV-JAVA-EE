@@ -10,26 +10,37 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Menu</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-       	<% User user = (User) session.getAttribute("user"); %>
-      	<c:if test="${user.mail != null}">
-		    <a class="nav-link" href="home"><c:out value="${ user.mail }"></c:out></a>
-		</c:if>
-      	<c:if test="${user.mail == null}">
-		    <a class="nav-link" href="home">Connexion</a>
-		</c:if>
-		<a class="nav-link" href="list-ideas">Section Idees</a>
-      </div>
-    </div>
+<% User user = (User) session.getAttribute("user"); %>
+
+
+  <div class="container-fluid" style="background: linear-gradient(135deg, #FF13F4, #E65B06); height:100px;">
+	  <div class="row">
+		  <div class="col-9" style="margin-top:18px;">
+ 		   	<span style="font-size:40px; color:yellow;"><i class="fas fa-lightbulb"></i></span>&nbsp&nbsp&nbsp&nbsp
+		    <a class="navbar-brand text-white" href="#">Topaidi - La création sans limite !</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+
+	      	<c:if test="${user.mail != null}">
+			    <a href="list-ideas"><button type="button" class="btn btn-light">Section Idees</button></a>
+			</c:if>
+			&nbsp&nbsp&nbsp&nbsp
+	      	<c:if test="${user.rank == 1}">
+			    <a href="admin"><button type="button" class="btn btn-light">Administration des candidatures</button></a>
+			</c:if>
+
+		  </div>
+		  <div class="col-3" style="margin-top:25px; color:white;">
+ 		  	<c:if test="${user.mail != null}">
+		  		<c:out value="${ user.mail }"></c:out><a class="nav-link" href="home"><button class="btn btn-primary">Se déconnecter</button></a>
+		  	</c:if>
+		  	<c:if test="${user.mail == null}">
+		  		<button type="button" class="btn btn-primary btn-sm"><a class="nav-link text-white" href="home">Connexion</a></button>
+		  	</c:if>
+		  </div>
+	  </div>
   </div>
-</nav>
 
 </body>
 </html>

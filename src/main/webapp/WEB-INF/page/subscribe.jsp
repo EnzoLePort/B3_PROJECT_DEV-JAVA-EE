@@ -11,51 +11,50 @@
 <body>
 	<%@include file="common/menu.jsp"%>
 	
-	<div class="row">
-		<form class="col-12">
-		
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="firstname" type="text" class="validate"> <label
-						for="firstname">Prénom</label>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="lastname" type="text" class="validate"> <label
-						for="lastname">Nom</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="email" type="email" class="validate"> <label
-						for="email">Email</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="password" type="password" class="validate"> <label
-						for="email">password</label>
-				</div>
-			</div>
-
-
-		  <button class="btn waves-effect waves-light" type="submit" name="action">
-		    <i class="material-icons right">Inscription</i>
-		  </button>
-
-		
-		</form>
-	</div>
-
-	<div align="center">
-		<p> Déjà un compte ? </p>
-		<a href ="home">Se connecter</a>
-	</div>
 	
+	<div class="container-fluid">
+	  <div class="row" style="margin-top:30px;">
+		  <div class="col-4">
+		  </div>
+		  <div class="col-4">
+		  		<h2 align="center">Inscription</h2>
+		  		
+				<p style="color:green"> <c:out value="${ success }"></c:out> </p>
+				
+				<form method="POST" action="">
+				  <div class="mb-3">
+				    <label class="form-label"><i class="fas fa-user"></i> Prénom</label>
+				    <input type="text" name="firstname" class="form-control">
+				  </div>
+  				  <div class="mb-3">
+				    <label class="form-label"><i class="fas fa-user"></i> Nom</label>
+				    <input type="text" name="lastname" class="form-control">
+				  </div>
+				  <div class="mb-3">
+				    <label class="form-label"><i class="fas fa-user"></i> Email</label>
+				    <input type="email" name="email" class="form-control">
+				  </div>
+				  <div class="mb-3">
+				    <label class="form-label"><i class="fas fa-lock"></i> Mot de passe</label>
+				    <input type="password" name="password" class="form-control">
+				  </div>
+				  <div align="center">
+		  			  <button class="btn btn-primary" type="submit">
+					    <i class="fas fa-sign-in-alt"></i> Inscription
+					  </button>
+				  </div>
+				</form>
+			
+				<div align="center">
+					<p> Déjà un compte ? </p>
+					<a href ="home">Se connecter</a>
+				</div>
+			</div>
+		  <div class="col-4">
+		  </div>
+		</div>
+	</div>
+
 	<%@include file="common/footer.jsp"%>
 
 </body>

@@ -8,6 +8,8 @@ public interface IdeaDAO {
 
 	List<Idea> getIdeas();
 	
+	List<Idea> getTopRatingIdeas();
+	
 	void add(Idea idea);
 	
 }

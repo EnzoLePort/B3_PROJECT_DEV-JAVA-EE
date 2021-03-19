@@ -36,4 +36,10 @@ public class IdeaServiceImpl implements IdeaService {
 		dao.add(idea);
 	}
 
+
+	public List<Idea> getTopRatingIdeas() {
+		IdeaDAO dao = new IdeaDAOImpl(em, utx);
+		return dao.getTopRatingIdeas();
+	}
+
 }

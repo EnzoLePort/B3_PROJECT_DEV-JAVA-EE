@@ -65,5 +65,14 @@
 		<servlet-name>Leaderboard</servlet-name>
 		<url-pattern>/leaderboard</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Admin</servlet-name>
+		<servlet-class>fr.epsi.servlet.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Admin</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
   
 </web-app>

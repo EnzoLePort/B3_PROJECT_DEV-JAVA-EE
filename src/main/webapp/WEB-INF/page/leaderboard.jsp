@@ -15,6 +15,9 @@
 		<div class="row">
 			<div class="col-4">
 				<h2>Top 3 idées les mieux notées !</h2>
+				<c:forEach items="${ listIdeasTopRating }" var="idea">
+					<b><c:out value="${ idea.title }"></c:out></b><br /><br />
+				</c:forEach>
 			</div>
 			<div class="col-4">
 				<h2>Top 3 utilisateurs qui ont postés le plus d'idées !</h2>

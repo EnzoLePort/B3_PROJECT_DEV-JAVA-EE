@@ -11,23 +11,37 @@
 <body>
 	<%@include file="common/menu.jsp"%>
 	
-	<p style="color:red"> <c:out value="${ error }"></c:out> </p>
-	
-	<form method="POST" action="#">
-	  <div class="mb-3">
-	    <label class="form-label">Email</label>
-	    <input type="email" name="email" class="form-control">
-	  </div>
-	  <div class="mb-3">
-	    <label class="form-label">Mot de passe</label>
-	    <input type="password" name="password" class="form-control">
-	  </div>
-	  <button type="submit" class="btn btn-primary">Connexion</button>
-	</form>
-
-	<div align="center">
-		<p> Pas encore de compte ? </p>
-		<a href="subscribe">S'inscrire</a>
+	<div class="container-fluid">
+	  <div class="row" style="margin-top:30px;">
+		  <div class="col-4">
+		  </div>
+		  <div class="col-4">
+		  		<h2 align="center">Veuillez vous authentifier...</h2>
+		  		
+				<p style="color:red"> <c:out value="${ error }"></c:out> </p>
+				
+				<form method="POST" action="#">
+				  <div class="mb-3">
+				    <label class="form-label"><i class="fas fa-user"></i> Email</label>
+				    <input type="email" name="email" class="form-control">
+				  </div>
+				  <div class="mb-3">
+				    <label class="form-label"><i class="fas fa-lock"></i> Mot de passe</label>
+				    <input type="password" name="password" class="form-control">
+				  </div>
+				  <div align="center">
+				  	<button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-sign-in-alt"></i> Connexion</button>
+				  </div>
+				</form>
+			
+				<div align="center" style="margin-top:30px;">
+					<p> Pas encore de compte ? </p>
+					<a href="subscribe"><button class="btn btn-secondary">S'inscrire</button></a>
+				</div>
+			</div>
+		  <div class="col-4">
+		  </div>
+		</div>
 	</div>
 
 	<%@include file="common/footer.jsp"%>

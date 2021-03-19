@@ -10,6 +10,8 @@ public interface IdeaService {
 
 	List<Idea> getIdeas();
 	
+	List<Idea> getTopRatingIdeas();
+	
 	void add(Idea idea); 
 	
 }
