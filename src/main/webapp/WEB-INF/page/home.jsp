@@ -20,14 +20,14 @@
 		  		
 				<p style="color:red"> <c:out value="${ error }"></c:out> </p>
 				
-				<form method="POST" action="#">
+				<form method="POST" action="j_security_check">
 				  <div class="mb-3">
 				    <label class="form-label"><i class="fas fa-user"></i> Email</label>
-				    <input type="email" name="email" class="form-control">
+				    <input type="email" name="j_username" class="form-control">
 				  </div>
 				  <div class="mb-3">
 				    <label class="form-label"><i class="fas fa-lock"></i> Mot de passe</label>
-				    <input type="password" name="password" class="form-control">
+				    <input type="password" name="j_password" class="form-control">
 				  </div>
 				  <div align="center">
 				  	<button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-sign-in-alt"></i> Connexion</button>

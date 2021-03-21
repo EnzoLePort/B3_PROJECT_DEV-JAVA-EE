@@ -74,5 +74,39 @@
 		<servlet-name>Admin</servlet-name>
 		<url-pattern>/admin</url-pattern>
 	</servlet-mapping>
+	
+	
+	<!-- Gestion de la sécurité -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>secure</web-resource-name>
+			<url-pattern>/home</url-pattern>
+			<url-pattern>/list-ideas</url-pattern>
+			<url-pattern>/create-rateIdea</url-pattern>
+			<url-pattern>/rates-idea</url-pattern>
+			<url-pattern>/create-rateIdea</url-pattern>
+			<url-pattern>/leaderboard</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>0</role-name>
+			<role-name>1</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>secureRealm</realm-name>
+		<form-login-config>
+			<form-login-page>/home</form-login-page>
+			<form-error-page>/loginError.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<role-name>0</role-name>
+	</security-role>
+	<security-role>
+		<role-name>1</role-name>
+	</security-role>
   
 </web-app>

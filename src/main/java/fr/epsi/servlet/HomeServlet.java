@@ -38,8 +38,8 @@ public class HomeServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String email = req.getParameter("email");
-    	String password = req.getParameter("password");
+    	String email = req.getParameter("j_username");
+    	String password = req.getParameter("j_password");
     	User user = serviceUser.get(email, password);
     	if(user != null && user.getRank() >=0) {
         	HttpSession session = req.getSession();
