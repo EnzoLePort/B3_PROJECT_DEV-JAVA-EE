@@ -25,15 +25,13 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 
-	public User get(String email, String password) {
-		Long count = (Long) em.createQuery("Select COUNT(u) from User u where u.mail=:email and u.password=:password")
+	public User get(String email) {
+		Long count = (Long) em.createQuery("Select COUNT(u) from User u where u.mail=:email")
 					.setParameter("email", email)
-					.setParameter("password", password)
 					.getSingleResult();
 		if(count > 0) {
-			return  em.createQuery("Select u from User u where u.mail=:email and u.password=:password", User.class)
+			return  em.createQuery("Select u from User u where u.mail=:email", User.class)
 								.setParameter("email", email)
-								.setParameter("password", password)
 								.getSingleResult();
 		} else {
 			return null;

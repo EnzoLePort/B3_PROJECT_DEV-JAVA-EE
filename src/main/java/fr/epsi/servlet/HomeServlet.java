@@ -1,6 +1,7 @@
 package fr.epsi.servlet;
 
 import java.io.IOException;
+import java.security.Principal;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -25,29 +26,19 @@ public class HomeServlet extends HttpServlet {
 
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		// Deconnexion si l'utilisateur est connecté
+    	HttpSession session = req.getSession();
+		if(req.getParameter("disconnect") != null && req.getParameter("disconnect").equals("true")) {
+			System.out.println("DECONNECTER !!");
+			session.removeAttribute("user");
+		} else if(req.getUserPrincipal() != null) {
+	    	User user = serviceUser.get(req.getUserPrincipal().toString());
+	    	session.setAttribute("user", user);
+	    	this.getServletContext().getRequestDispatcher("/WEB-INF/page/list-ideas.jsp").forward(req, resp);
+		}
 		// Vérification de la présence des données flop et top dans la table rate. Sinon remplissage de ces données
 		serviceRate.checkDataTopFlop();
 		
-		// Deconnexion si l'utilisateur est connecté
-    	HttpSession session = req.getSession();
-    	session.removeAttribute("user");
-		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/page/home.jsp").forward(req, resp);
-    }
-    
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String email = req.getParameter("j_username");
-    	String password = req.getParameter("j_password");
-    	User user = serviceUser.get(email, password);
-    	if(user != null && user.getRank() >=0) {
-        	HttpSession session = req.getSession();
-        	session.setAttribute("user", user);
-        	resp.sendRedirect("list-ideas");
-    	} else {
-	    	req.setAttribute("error", "Les identifiants ne sont pas valides !");
-	    	this.getServletContext().getRequestDispatcher("/WEB-INF/page/home.jsp").forward(req, resp);
-    	}
     }
 }

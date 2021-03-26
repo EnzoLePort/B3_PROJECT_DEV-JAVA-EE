@@ -33,7 +33,7 @@
 		  </div>
 		  <div class="col-3" style="margin-top:25px; color:white;">
  		  	<c:if test="${user.mail != null}">
-		  		<c:out value="${ user.mail }"></c:out><a class="nav-link" href="home"><button class="btn btn-primary">Se déconnecter</button></a>
+		  		<c:out value="${ user.mail }"></c:out><a class="nav-link" href="home?disconnect=true"><button class="btn btn-primary">Se déconnecter</button></a>
 		  	</c:if>
 		  	<c:if test="${user.mail == null}">
 		  		<button type="button" class="btn btn-primary btn-sm"><a class="nav-link text-white" href="home">Connexion</a></button>

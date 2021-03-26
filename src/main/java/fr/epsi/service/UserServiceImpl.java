@@ -24,9 +24,9 @@ public class UserServiceImpl implements UserService {
 	@Resource
 	UserTransaction utx;
 
-	public User get(String email, String password) {
+	public User get(String email) {
 		UserDAO dao = new UserDAOImpl(em, utx);
-		return dao.get(email, password);
+		return dao.get(email);
 	}
 
 	public void subscribe(User user) {

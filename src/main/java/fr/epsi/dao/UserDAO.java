@@ -7,7 +7,7 @@ import fr.epsi.entite.User;
 
 public interface UserDAO {
 	
-	User get(String email, String password);
+	User get(String email);
 	
 	void subscribe(User user);
 	

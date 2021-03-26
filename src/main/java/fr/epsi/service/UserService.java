@@ -6,7 +6,7 @@ import fr.epsi.entite.User;
 
 public interface UserService {
 	
-	User get(String email, String password);
+	User get(String email);
 	
 	void subscribe(User user);
 	
