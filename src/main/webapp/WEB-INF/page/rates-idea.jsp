@@ -11,17 +11,17 @@
 <body>
 	<%@include file="common/menu.jsp"%>
 
-	<h2>Liste des commentaires pour l'idée : {{idee}} !</h2>
+	<h2>Liste des commentaires !</h2>
 	
 	<table class="table table-striped">
+	  <th>Nom de l'idée</th>
 	  <th>Nom</th>
-	  <th>Par</th>
-	  <th>Description</th>
-	  <th>Date</th>
-	  <th>Catégorie</th>
+	  <th>Prénom</th>
+	  <th>Commentaire</th>
 	  <th>Note</th>
 	  	<c:forEach items="${ listRateIdea }" var="rateIdea">
 			<tr>
+				<td><c:out value="${ rateIdea.idea.title }"></c:out></td>
 				<td><c:out value="${ rateIdea.user.name }"></c:out></td>
 				<td><c:out value="${ rateIdea.user.firstName }"></c:out></td>				
 				<td><c:out value="${ rateIdea.comment }"></c:out></td>

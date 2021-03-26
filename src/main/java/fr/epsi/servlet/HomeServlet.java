@@ -34,7 +34,7 @@ public class HomeServlet extends HttpServlet {
 		} else if(req.getUserPrincipal() != null) {
 	    	User user = serviceUser.get(req.getUserPrincipal().toString());
 	    	session.setAttribute("user", user);
-	    	this.getServletContext().getRequestDispatcher("/WEB-INF/page/list-ideas.jsp").forward(req, resp);
+	    	resp.sendRedirect("list-ideas");
 		}
 		// Vérification de la présence des données flop et top dans la table rate. Sinon remplissage de ces données
 		serviceRate.checkDataTopFlop();
